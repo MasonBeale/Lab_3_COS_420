@@ -4,7 +4,7 @@
  * 
  * HelloWorld.java
  * 
- * Prints a hello world message and the current date.
+ * Prints a hello world message, the current date, and the amount of free memory.
  */
 
 package Lab_3_COS_420;
@@ -14,9 +14,11 @@ public class HelloWorld {
     
     public static void main(String[] args) {
         LocalDate date = LocalDate.now();
-
+        Runtime runtime = Runtime.getRuntime();
+        long mem = runtime.freeMemory();
         // Printing
         System.out.println("Hello World!");
         System.out.println("It is currently " + date);
+        System.out.println("Current free memory: " + mem/1000000 + "MB");
     }
 }
